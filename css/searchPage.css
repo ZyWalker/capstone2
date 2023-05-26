@@ -20,14 +20,14 @@ body {
   height: 200px;
 }
 
-.card {
+/* .card {
     background-color: rgb(240, 96, 43);
     margin-left: 50px;
     margin-right: 50px;
-}
+} */
 
 
-th,
+/* th,
 td {
   text-align: center;
   padding: 8px;
@@ -35,7 +35,7 @@ td {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
-}
+} */
 
 #sticky-footer {
   color: white;
