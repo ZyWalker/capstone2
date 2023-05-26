@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(2, 41, 2);
+  }
+
+  #navy {
+    margin-left: 10px;
+    width: 130px;
+    height: 69px;
+  
+    border-bottom-left-radius: 30px;
+  
+    border-bottom-right-radius: 30px;
+  }
+  
+  #logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 200px;
+  }
+  
+
+  #sticky-footer {
+    color: white;
+    margin-top: 5%;
+}
+.card {
+    background-color: rgb(240, 96, 43);
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+#sticky-footer {
+    background-color:  rgb(2, 41, 2);;
+    border-style: inset;
+    border-style: ridge;
+}

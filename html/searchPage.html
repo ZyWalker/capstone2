@@ -20,21 +20,120 @@
       integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="/css/searchPage.css" />
     <title>Search Page</title>
   </head>
   <body>
     <main>
-      <header>Mount Everywhere</header>
-      <a href="infoPage.html">Moutain Info</a>
-      <div id="buttons-div">
-        <select name="location" id="location">
-          Location
-        </select>
-        <select name="Park Type" id="park-type">
-        </select>
-        <button id="viewallbtn">View All</button>
+      <div id="big div">
+        <nav id="navy" class="navbar navbar-expand-sm bg-light">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <a
+                title="Information Page"
+                href="/html/infoPage.html"
+                id="info-btn"
+                ><img src="/images/mountain-info.png" alt="information page"
+              /></a>
+            </div>
+          </div>
+        </nav>
+        <a href="/html/index.html"
+          ><img id="logo" src="/images/logo.png" alt="logo"
+        /></a>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <input
+            type="radio"
+            name="ex"
+            id="rd1"
+            value="1"
+            onchange="displayTable(value)"
+          />
+          <label for="rd1">By Location</label>
+          <input
+            type="radio"
+            name="ex"
+            id="rd2"
+            value="2"
+            onchange="displayTable(value)"
+          />
+          <label for="rd2">By Type</label>
+
+          <div id="TerritoriesTypeDiv">
+            <article id="TerritoriesArticle">
+              <form action="#">
+                <h3>States/Territories</h3>
+
+                <label for="">Choose a Location :</label>
+
+                <select
+                  name="locations"
+                  id="Territories-location-list"
+                  onchange="handleLocationChanged();"
+                ></select>
+              </form>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                  </tr>
+                </thead>
+                <tbody id="Territories-tbl-body"></tbody>
+              </table>
+            </article>
+          </div>
+
+          <div id="LocationTypeDiv">
+            <article id="ParksArticle" style="display: none">
+              <form action="#">
+                <h3>Park</h3>
+
+                <label for="">Choose a Location :</label>
+
+                <select
+                  name="ParkLocations"
+                  id="parks-location-list"
+                  onchange="handleParksLocationChanged();"
+                ></select>
+              </form>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                  </tr>
+                </thead>
+                <tbody id="parks-tbl-body"></tbody>
+              </table>
+            </article>
+          </div>
+        </div>
       </div>
     </main>
-    <footer></footer>
+    <footer id="sticky-footer" class="flex-shrink-8 py-4 text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; Mount Everywhere</small>
+      </div>
+    </footer>
+    <script src="/scripts/scripts2/locationData.js"></script>
+    <script src="/scripts/scripts2/nationalParkData.js"></script>
+    <script src="/scripts/scripts2/searchPage.js"></script>
+    <script src="/scripts/scripts2/parkTypeData.js"></script>
   </body>
 </html>
