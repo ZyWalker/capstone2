@@ -4,14 +4,19 @@ body {
 
   #navy {
     margin-left: 10px;
-    width: 130px;
-    height: 69px;
+    width: 275px;
+    height: 80px;
   
     border-bottom-left-radius: 30px;
   
     border-bottom-right-radius: 30px;
   }
   
+  #search-btn, #info-btn{
+  color: orangered;
+  font-weight: bolder;
+  font-stretch: expanded;
+  }
   #logo {
     display: block;
     margin-left: auto;
