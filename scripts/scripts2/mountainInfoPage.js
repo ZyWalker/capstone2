@@ -1,38 +1,34 @@
 async function getSunsetForMountain(lat, lng) {
-    let response = await fetch(
-      `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`
-    );
-    let data = await response.json();
-    return data;
-  }
-  
+  let response = await fetch(
+    `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`
+  );
+  let data = await response.json();
+  return data;
+}
+
 const mountainsTableBody = document.querySelector("#mountains-tbl-body");
 const mountainList = document.querySelector("#mountain-list");
 
+function loadMountainList() {
+  let option = new Option("Select Mountain...", "");
+  mountainList.appendChild(option);
 
-function loadLocationList() {
-  let option = new Option("Select Location...", ""); 
-  mountainList.appendChild(option); 
-
-  
   for (const mountain of mountainsArray) {
-    let option = document.createElement("option"); 
-    option.value = mountain.name; 
-    option.innerText = mountain.name; 
-    mountainList.appendChild(option); 
+    let option = document.createElement("option");
+    option.value = mountain.name;
+    option.innerText = mountain.name;
+    mountainList.appendChild(option);
   }
 }
 
-
-loadLocationList();
-
+loadMountainList();
 
 function buildMountainsRow(tbody, mountain) {
   let row = tbody.insertRow(-1);
 
   let cell1 = row.insertCell(0);
   let img = document.createElement("img");
-  img.src = `./Images/${mountain.img}`;
+  img.src = `images/mountains/${mountain.img}`;
   img.width = 335;
   img.height = 220;
   cell1.appendChild(img);
@@ -51,7 +47,6 @@ function buildMountainsRow(tbody, mountain) {
 
   let cell6 = row.insertCell(5);
 
-
   cell6.innerText = getSunsetForMountain(mountain.coords);
 
   let cell7 = row.insertCell(6);
@@ -59,7 +54,7 @@ function buildMountainsRow(tbody, mountain) {
   if (mountain.Visit) {
     cell7.innerText = mountain.Visit;
   }
-} 
+}
 
 function loadMountainsTable(mountainName) {
   mountainsTableBody.innerHTML = "";
@@ -71,10 +66,7 @@ function loadMountainsTable(mountainName) {
   }
 }
 
-
 function handleMountainChanged() {
   const mountainName = mountainList.value;
   loadMountainsTable(mountainName);
-} 
-
-
+}
